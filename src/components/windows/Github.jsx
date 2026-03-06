@@ -1,5 +1,5 @@
 import { useState } from "react";
-import gitdata from "../../githubdata/gitdata.json"
+import gitdata from "../../githubData/gitdata.json"
 import MacWndow from "./MacWndow";
 import "./github.scss"
 const Github = ({ windowname, setwindowState }) => {
