@@ -1,0 +1,130 @@
+/**
+ * @file: profile.config.ts
+ * @author: Ritam Haldar
+ * @summary: Backend & Full-Stack Developer focused on building scalable web applications.
+ */
+
+// --------------------------------------------------
+// 1. CORE DEPENDENCIES & SKILLS
+// --------------------------------------------------
+
+const TECH_STACK = {
+  languages: [
+    "JavaScript",
+    "TypeScript",
+    "Python"
+  ],
+  frameworks: [
+    "Node.js",
+    "Express.js",
+    "React",
+  ],
+  databases: [
+    "MongoDB",
+    "Redis"
+  ],
+  tools: [
+    "Git",
+    "Docker",
+    "AWS (EC2, S3)",
+    "Linux"
+  ]
+};
+
+// --------------------------------------------------
+// 2. DEVELOPMENT EXPERIENCE (Projects & Learning)
+// --------------------------------------------------
+
+class DevelopmentHistory {
+
+  /**
+   * BACKEND DEVELOPMENT PROJECTS
+   * @period 2025 - Present
+   */
+  public async Backend_Projects(): Promise<Experience> {
+
+    const role = "Backend Developer (Academic & Personal Projects)";
+
+    const apis = [
+      "Designed RESTful APIs using Node.js and Express",
+      "Implemented JWT and session-based authentication",
+      "Built modular backend services for maintainability"
+    ];
+
+    const databaseWork = [
+      "Optimized MongoDB and SQL queries",
+      "Designed scalable database schemas",
+      "Handled API integration with frontend applications"
+    ];
+
+    const collaboration = "GitHub collaboration with pull requests and version control";
+
+    return { role, apis, databaseWork, collaboration };
+  }
+
+  /**
+   * FULL STACK DEVELOPMENT PRACTICE
+   * @period 2021 - Present
+   */
+  public FullStack_Learning(): void {
+
+    this.role = "Full Stack Developer (Learning & Projects)";
+
+    this.skills = [
+      "Developed full-stack applications using HTML, JavaScript, Node.js",
+      "Implemented backend APIs and connected frontend interfaces",
+      "Practiced debugging, testing, and improving application performance"
+    ];
+
+    this.architecture = "Hands-on experience with API design, authentication flows, and backend architecture";
+  }
+}
+
+// --------------------------------------------------
+// 3. PROJECT PORTFOLIO
+// --------------------------------------------------
+
+interface Project {
+  name: string;
+  focus: string;
+}
+
+const projects: Project[] = [
+  {
+    name: "REST API Systems",
+    focus: "Backend API development using Node.js and Express"
+  },
+  {
+    name: "Authentication Systems",
+    focus: "JWT and session-based login systems for secure user access"
+  },
+  {
+    name: "Full Stack Applications",
+    focus: "Integration of frontend UI with backend services and databases"
+  }
+];
+
+// --------------------------------------------------
+// 4. ACADEMIC BACKGROUND
+// --------------------------------------------------
+
+const education = new Map<string, string>([
+  ["ABC Institute of Technology", "B.Tech Computer Science (2023 – 2027)"]
+]);
+
+export default new DevelopmentHistory();
+
+
+// --------------------------------------------------
+// TERMINAL OUTPUT
+// --------------------------------------------------
+
+/*
+$ user --status
+> Name: Ritam Haldar
+> Role: Backend & Full Stack Developer
+> Status: Open to Internship / Fresher Opportunities
+> Location: India / Remote
+> Loading Skills... [||||||||||] 100%
+> Ready.
+*/
