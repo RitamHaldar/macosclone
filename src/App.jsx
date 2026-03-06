@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './App.scss'
-import Dock from './Components/dock'
-import Navbar from './Components/Navbar'
-import Github from './Components/Windows/Github'
-import Notes from './Components/Windows/Notes'
-import Resume from './Components/Windows/Resume'
-import Spotify from './Components/Windows/Spotify'
-import Cli from './Components/Windows/Cli'
+import Dock from './components/dock'
+import Navbar from './components/Navbar'
+import Github from './components/Windows/Github'
+import Notes from './components/Windows/Notes'
+import Resume from './components/Windows/Resume'
+import Spotify from './components/Windows/Spotify'
+import Cli from './components/Windows/Cli'
 
 
 function App() {
