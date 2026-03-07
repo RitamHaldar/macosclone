@@ -18,7 +18,9 @@ const dock = ({ setwindowState }) => {
                 className="icon pdf">
                 <img src="/dockicons/pdf.svg" alt="" />
             </div>
-            <div className="icon calender">
+            <div
+                onClick={() => { window.open("https://calendar.google.com/", "_blank") }}
+                className="icon calender">
                 <img src="/dockicons/calender.svg" alt="" />
             </div>
             <div
@@ -26,10 +28,14 @@ const dock = ({ setwindowState }) => {
                 className="icon spotify">
                 <img src="/dockicons/spotify.svg" alt="" />
             </div>
-            <div className="icon mail">
+            <div
+                onClick={() => { window.open("https://mail.google.com/mail/?view=cm&fs=1&to=sample@example.com", "_blank") }}
+                className="icon mail">
                 <img src="/dockicons/mail.svg" alt="" />
             </div>
-            <div className="icon link">
+            <div
+                onClick={() => { window.open("https://in.linkedin.com/", "_blank") }}
+                className="icon link">
                 <img src="/dockicons/link.svg" alt="" />
             </div>
             <div
