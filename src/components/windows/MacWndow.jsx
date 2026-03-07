@@ -3,36 +3,46 @@ import { Rnd } from 'react-rnd'
 import "./macwindow.scss"
 
 const MacWndow = ({ children, windowname, setwindowState }) => {
-    const [width, setwidth] = useState("40vw");
-    const [height, setheight] = useState("50vh");
+    const [size, setSize] = useState({ width: "40vw", height: "50vh" });
+    const [position, setPosition] = useState({ x: 150, y: 100 });
+
     const handleClose = () => {
         setwindowState(prev => ({ ...prev, [windowname]: false }));
     };
 
     const handleMinimize = () => {
-        setwidth("40vw");
-        setheight("50vh")
+        setSize({ width: "40vw", height: "50vh" });
+        setPosition({ x: 150, y: 100 });
     };
 
     const handleMaximize = () => {
-        setwidth("100vw");
-        setheight("100vh")
+        setSize({ width: "100vw", height: "100vh" });
+        setPosition({ x: 0, y: 0 });
     };
+
+    const isMaximized = size.width === "100vw";
 
     return (
         <Rnd
-            size={{ width: width, height: height }}
-            position={width == "100vw" ? { x: 0, y: 0 } : { x: 150, y: 200 }}
-            disableDragging={Boolean(width == "100vw")}
-            enableResizing={!Boolean(width == "100vw")}
-            default={{
-                height: height,
-                width: width,
-                x: 150,
-                y: 200
-            }}>
-            <div className={`window ${width == "100vw" ? 'maximized' : ''}`}>
-                <nav>
+            size={size}
+            position={position}
+            disableDragging={isMaximized}
+            enableResizing={!isMaximized}
+            dragHandleClassName="window-nav"
+            bounds="main"
+            onDragStop={(e, d) => {
+                setPosition({ x: d.x, y: d.y });
+            }}
+            onResizeStop={(ref, position) => {
+                setSize({
+                    width: ref.style.width,
+                    height: ref.style.height,
+                });
+                setPosition(position);
+            }}
+        >
+            <div className={`window ${isMaximized ? 'maximized' : ''}`}>
+                <nav className="window-nav">
                     <div className="options">
                         <div onClick={handleClose} className="red dot"></div>
                         <div onClick={handleMinimize} className="yellow dot"></div>

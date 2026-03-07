@@ -12,6 +12,10 @@
         gap: 0.65rem;
         align-items: center;
 
+        &.window-nav {
+            cursor: move;
+        }
+
         .options {
             display: flex;
             gap: 0.2rem;
