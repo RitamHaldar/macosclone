@@ -33,7 +33,7 @@ const MacWndow = ({ children, windowname, setwindowState }) => {
             onDragStop={(e, d) => {
                 setPosition({ x: d.x, y: d.y });
             }}
-            onResizeStop={(ref, position) => {
+            onResizeStop={(e, direction, ref, delta, position) => {
                 setSize({
                     width: ref.style.width,
                     height: ref.style.height,
